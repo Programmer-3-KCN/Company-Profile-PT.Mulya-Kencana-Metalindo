@@ -1,3 +1,9 @@
 import { FC, ReactElement } from "react";
 
-export const Nav: FC = (): ReactElement => <nav></nav>;
+import { Content } from "./batches";
+
+export const Nav: FC = (): ReactElement => (
+  <nav>
+    <Content />
+  </nav>
+);

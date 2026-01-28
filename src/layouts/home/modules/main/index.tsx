@@ -1,12 +1,16 @@
-import { FC, PropsWithChildren, ReactElement } from "react";
+import { FC, ReactElement } from "react";
 
-import { Content } from "./batches";
+import { About, Careers, Contact, FloatingWhatsApp, Home, Products, VisionMission, WhyChooseUs } from "./batches";
 
-type T = Readonly<PropsWithChildren>;
-
-export const Main: FC<T> = (props): ReactElement => (
+export const Main: FC = (): ReactElement => (
   <main>
-    <Content />
-    {props.children}
+    <Home />
+    <About />
+    <VisionMission />
+    <Products />
+    <WhyChooseUs />
+    <Careers />
+    <Contact />
+    <FloatingWhatsApp />
   </main>
 );

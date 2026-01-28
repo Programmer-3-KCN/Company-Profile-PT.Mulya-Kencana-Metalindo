@@ -1,3 +1,5 @@
 import { FC, ReactElement } from "react";
 
-export const Footer: FC = (): ReactElement => <footer></footer>;
+import { Content } from "./batches";
+
+export const Footer: FC = (): ReactElement => <Content />;
