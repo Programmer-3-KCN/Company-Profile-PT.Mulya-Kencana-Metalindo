@@ -7,6 +7,9 @@
   --font-geistSans: var(--font-geist-mono);
   --font-inter: var(--font-inter);
   --font-roboto: var(--font-roboto);
+
+  /* Custom breakpoint for extra small devices (iPhone SE: 375px) */
+  --breakpoint-xs: 400px;
 }
 
 /*

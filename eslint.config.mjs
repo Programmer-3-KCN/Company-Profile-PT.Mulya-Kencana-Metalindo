@@ -63,7 +63,7 @@ const eslintConfig = defineConfig([
       "better-tailwindcss/no-deprecated-classes": ["error"],
       "better-tailwindcss/no-duplicate-classes": ["error"],
       "better-tailwindcss/no-unnecessary-whitespace": ["error"],
-      "better-tailwindcss/no-unregistered-classes": ["error", { ignore: ["font-inter", "font-geistMono", "font-geistSans", "font-roboto"] }],
+      "better-tailwindcss/no-unregistered-classes": ["error", { ignore: ["font-inter", "font-geistMono", "font-geistSans", "font-roboto", "xs:"] }],
       curly: ["error"],
       "no-unused-expressions": "off",
       "perfectionist/sort-imports": [

@@ -69,23 +69,30 @@ export const Content: FC = (): ReactElement => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-white py-24" id="why-choose-us" ref={ref}>
-      <div className="container mx-auto px-6 lg:px-12">
-        <motion.div animate={isInView ? "visible" : "hidden"} className="mx-auto mb-16 max-w-2xl text-center" initial="hidden" variants={fadeInUp}>
-          <span className="inline-block rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold text-amber-700">Keunggulan Kami</span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl lg:text-5xl">Mengapa Memilih Kami?</h2>
-          <p className="mt-4 text-lg text-gray-600">Komitmen kami untuk memberikan yang terbaik dalam setiap aspek layanan</p>
+    <section className="relative overflow-hidden bg-white py-12 sm:py-24" id="why-choose-us" ref={ref}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12">
+        <motion.div
+          animate={isInView ? "visible" : "hidden"}
+          className="mx-auto mb-8 max-w-2xl text-center sm:mb-16"
+          initial="hidden"
+          variants={fadeInUp}
+        >
+          <span className="inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700 sm:px-4 sm:py-1.5 sm:text-sm">
+            Keunggulan Kami
+          </span>
+          <h2 className="mt-3 text-2xl font-bold tracking-tight text-gray-900 sm:mt-4 sm:text-3xl md:text-4xl lg:text-5xl">Mengapa Memilih Kami?</h2>
+          <p className="mt-3 text-sm text-gray-600 sm:mt-4 sm:text-lg">Komitmen kami untuk memberikan yang terbaik dalam setiap aspek layanan</p>
         </motion.div>
 
         <motion.div
           animate={isInView ? "visible" : "hidden"}
-          className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid grid-cols-2 gap-4 sm:gap-8 lg:grid-cols-4"
           initial="hidden"
           variants={staggerContainer}
         >
           {advantages.map((item, index) => (
             <motion.div className="group text-center" key={index} variants={staggerItem} whileHover={{ y: -5 }}>
-              <div className="relative mx-auto mb-6">
+              <div className="relative mx-auto mb-3 sm:mb-6">
                 {/* Outer Ring */}
                 <motion.div
                   animate={isInView ? { opacity: 0, scale: 1 } : {}}
@@ -95,12 +102,12 @@ export const Content: FC = (): ReactElement => {
                 />
                 {/* Main Circle */}
                 <motion.div
-                  className="relative mx-auto flex size-28 flex-col items-center justify-center rounded-full border-4 border-amber-100 bg-gradient-to-br from-amber-50 to-orange-50 transition-all duration-300 group-hover:border-amber-300"
+                  className="relative mx-auto flex size-20 flex-col items-center justify-center rounded-full border-2 border-amber-100 bg-gradient-to-br from-amber-50 to-orange-50 transition-all duration-300 group-hover:border-amber-300 sm:size-28 sm:border-4"
                   whileHover={{ rotate: 5, scale: 1.1 }}
                 >
                   <motion.span
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    className="text-3xl font-bold text-amber-600"
+                    className="text-xl font-bold text-amber-600 sm:text-3xl"
                     initial={{ opacity: 0, scale: 0 }}
                     transition={{ delay: 0.3 + index * 0.1 }}
                   >
@@ -110,16 +117,16 @@ export const Content: FC = (): ReactElement => {
                 {/* Icon Badge */}
                 <motion.div
                   animate={isInView ? { scale: 1 } : {}}
-                  className="absolute -right-1 -bottom-1 flex size-10 items-center justify-center rounded-full bg-gradient-to-br from-amber-500 to-orange-500 text-white shadow-lg"
+                  className="absolute -right-0.5 -bottom-0.5 flex size-7 items-center justify-center rounded-full bg-gradient-to-br from-amber-500 to-orange-500 text-white shadow-lg sm:-right-1 sm:-bottom-1 sm:size-10"
                   initial={{ scale: 0 }}
                   transition={{ delay: 0.5 + index * 0.1, stiffness: 200, type: "spring" }}
                   whileHover={{ rotate: 360 }}
                 >
-                  {item.icon}
+                  <div className="[&>svg]:size-4 sm:[&>svg]:size-7">{item.icon}</div>
                 </motion.div>
               </div>
-              <h3 className="mb-2 text-lg font-bold text-gray-900">{item.title}</h3>
-              <p className="text-gray-600">{item.description}</p>
+              <h3 className="mb-1 text-sm font-bold text-gray-900 sm:mb-2 sm:text-lg">{item.title}</h3>
+              <p className="text-xs text-gray-600 sm:text-base">{item.description}</p>
             </motion.div>
           ))}
         </motion.div>

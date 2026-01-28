@@ -64,7 +64,7 @@ export const Content: FC = (): ReactElement => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gray-50 py-24" id="contact" ref={ref}>
+    <section className="relative overflow-hidden bg-gray-50 py-12 sm:py-24" id="contact" ref={ref}>
       {/* Decorative */}
       <motion.div
         animate={{ scale: [1, 1.2, 1] }}
@@ -72,35 +72,47 @@ export const Content: FC = (): ReactElement => {
         transition={{ duration: 8, ease: "easeInOut", repeat: Infinity }}
       />
 
-      <div className="relative container mx-auto px-6 lg:px-12">
-        <motion.div animate={isInView ? "visible" : "hidden"} className="mx-auto mb-16 max-w-2xl text-center" initial="hidden" variants={fadeInUp}>
-          <span className="inline-block rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold text-amber-700">Kontak</span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl lg:text-5xl">Hubungi Kami</h2>
-          <p className="mt-4 text-lg text-gray-600">Kami siap membantu Anda dengan kebutuhan material konstruksi</p>
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-12">
+        <motion.div
+          animate={isInView ? "visible" : "hidden"}
+          className="mx-auto mb-8 max-w-2xl text-center sm:mb-16"
+          initial="hidden"
+          variants={fadeInUp}
+        >
+          <span className="inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700 sm:px-4 sm:py-1.5 sm:text-sm">
+            Kontak
+          </span>
+          <h2 className="mt-3 text-2xl font-bold tracking-tight text-gray-900 sm:mt-4 sm:text-3xl md:text-4xl lg:text-5xl">Hubungi Kami</h2>
+          <p className="mt-3 text-sm text-gray-600 sm:mt-4 sm:text-lg">Kami siap membantu Anda dengan kebutuhan material konstruksi</p>
         </motion.div>
 
-        <div className="grid gap-8 lg:grid-cols-5">
+        <div className="grid gap-4 sm:gap-8 lg:grid-cols-5">
           {/* Contact Info */}
-          <motion.div animate={isInView ? "visible" : "hidden"} className="space-y-4 lg:col-span-2" initial="hidden" variants={staggerContainer}>
+          <motion.div
+            animate={isInView ? "visible" : "hidden"}
+            className="space-y-3 sm:space-y-4 lg:col-span-2"
+            initial="hidden"
+            variants={staggerContainer}
+          >
             {contactInfo.map((info, index) => (
               <motion.div
-                className="group flex items-start gap-4 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition-all hover:border-amber-200 hover:shadow-md"
+                className="group flex items-start gap-3 rounded-xl border border-gray-100 bg-white p-3 shadow-sm transition-all hover:border-amber-200 hover:shadow-md sm:gap-4 sm:rounded-2xl sm:p-5"
                 key={index}
                 variants={staggerItem}
                 whileHover={{ scale: 1.02, x: 10 }}
               >
                 <motion.div
-                  className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-100 to-orange-100 text-amber-600 transition-all group-hover:from-amber-500 group-hover:to-orange-500 group-hover:text-white"
+                  className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-amber-100 to-orange-100 text-amber-600 transition-all group-hover:from-amber-500 group-hover:to-orange-500 group-hover:text-white sm:size-12 sm:rounded-xl"
                   transition={{ duration: 0.5 }}
                   whileHover={{ rotate: 360 }}
                 >
                   {info.icon}
                 </motion.div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">{info.label}</h4>
+                <div className="min-w-0">
+                  <h4 className="text-sm font-semibold text-gray-900 sm:text-base">{info.label}</h4>
                   {info.link ? (
                     <a
-                      className="text-amber-600 transition-colors hover:text-amber-700 hover:underline"
+                      className="text-xs break-all text-amber-600 transition-colors hover:text-amber-700 hover:underline sm:text-sm"
                       href={info.link}
                       rel="noopener noreferrer"
                       target="_blank"
@@ -108,7 +120,7 @@ export const Content: FC = (): ReactElement => {
                       {info.value}
                     </a>
                   ) : (
-                    <p className="text-gray-600">{info.value}</p>
+                    <p className="text-xs text-gray-600 sm:text-sm">{info.value}</p>
                   )}
                 </div>
               </motion.div>
@@ -118,13 +130,13 @@ export const Content: FC = (): ReactElement => {
           {/* Map */}
           <motion.div
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            className="overflow-hidden rounded-3xl border border-gray-200 shadow-xl lg:col-span-3"
+            className="h-64 overflow-hidden rounded-2xl border border-gray-200 shadow-xl sm:h-auto sm:rounded-3xl lg:col-span-3"
             initial={{ opacity: 0, scale: 0.9 }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             <iframe
               allowFullScreen={true}
-              className="size-full border-0"
+              className="size-full min-h-64 border-0 sm:min-h-96"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.6962659152127!2d107.59719319999999!3d-6.9268629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e61f857b6e79%3A0x84033ec28c966976!2sPT.%20Mulya%20Kencana%20Metalindo!5e0!3m2!1sen!2sid!4v1769582899158!5m2!1sen!2sid"

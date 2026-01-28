@@ -51,8 +51,9 @@ export const Content: FC = (): ReactElement => {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          <Image alt="Logo" className="w-fit -translate-y-1.75" height={25} src={logo} />
-          <span className="text-lg font-bold text-amber-700 transition-colors md:text-xl">PT. Mulya Kencana Metalindo</span>
+          <Image alt="Logo" className="xs:-translate-y-1.75 w-fit" height={25} src={logo} />
+          <span className="xs:inline hidden text-lg font-bold text-amber-700 transition-colors md:text-xl">PT. Mulya Kencana Metalindo</span>
+          {/* <span className="xs:hidden text-sm font-bold text-amber-700 transition-colors">PT. MKM</span> */}
         </motion.a>
         <div className="hidden gap-8 lg:flex">
           {navItems.map((item, index) => {
@@ -76,11 +77,11 @@ export const Content: FC = (): ReactElement => {
           })}
         </div>
         <motion.button
-          className={`rounded-lg p-2 transition-colors lg:hidden ${isScrolled ? "text-gray-700 hover:bg-gray-100" : "text-gray-800 hover:bg-white/20"}`}
+          className={`rounded-lg transition-colors lg:hidden ${isScrolled ? "text-gray-700 hover:bg-gray-100" : "text-gray-800 hover:bg-white/20"}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           whileTap={{ scale: 0.9 }}
         >
-          <svg className="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="-mr-1 size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
           </svg>
         </motion.button>

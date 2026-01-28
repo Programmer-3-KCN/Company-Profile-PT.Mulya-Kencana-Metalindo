@@ -66,7 +66,7 @@ export const Content: FC = (): ReactElement => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white py-24" id="products" ref={ref}>
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white py-12 sm:py-24" id="products" ref={ref}>
       {/* Decorative */}
       <motion.div
         animate={{ rotate: [0, 180, 360], scale: [1, 1.2, 1] }}
@@ -74,22 +74,33 @@ export const Content: FC = (): ReactElement => {
         transition={{ duration: 20, ease: "linear", repeat: Infinity }}
       />
 
-      <div className="relative container mx-auto px-6 lg:px-12">
-        <motion.div animate={isInView ? "visible" : "hidden"} className="mx-auto mb-16 max-w-2xl text-center" initial="hidden" variants={fadeInUp}>
-          <span className="inline-block rounded-full bg-amber-100 px-4 py-1.5 text-sm font-semibold text-amber-700">Produk & Layanan</span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl lg:text-5xl">Solusi Konstruksi Terpadu</h2>
-          <p className="mt-4 text-lg text-gray-600">Kami menyediakan berbagai produk berkualitas untuk memenuhi kebutuhan konstruksi Anda</p>
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-12">
+        <motion.div
+          animate={isInView ? "visible" : "hidden"}
+          className="mx-auto mb-8 max-w-2xl text-center sm:mb-16"
+          initial="hidden"
+          variants={fadeInUp}
+        >
+          <span className="inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700 sm:px-4 sm:py-1.5 sm:text-sm">
+            Produk & Layanan
+          </span>
+          <h2 className="mt-3 text-2xl font-bold tracking-tight text-gray-900 sm:mt-4 sm:text-3xl md:text-4xl lg:text-5xl">
+            Solusi Konstruksi Terpadu
+          </h2>
+          <p className="mt-3 text-sm text-gray-600 sm:mt-4 sm:text-lg">
+            Kami menyediakan berbagai produk berkualitas untuk memenuhi kebutuhan konstruksi Anda
+          </p>
         </motion.div>
 
         <motion.div
           animate={isInView ? "visible" : "hidden"}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4"
           initial="hidden"
           variants={staggerContainer}
         >
           {products.map((product, index) => (
             <motion.div
-              className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:border-amber-200 hover:shadow-xl hover:shadow-amber-500/10"
+              className="group relative overflow-hidden rounded-xl border border-gray-100 bg-white p-4 shadow-sm transition-all duration-300 hover:border-amber-200 hover:shadow-xl hover:shadow-amber-500/10 sm:rounded-2xl sm:p-6"
               key={index}
               variants={staggerItem}
               whileHover={{ scale: 1.02, y: -10 }}
@@ -101,14 +112,14 @@ export const Content: FC = (): ReactElement => {
               />
               <div className="relative">
                 <motion.div
-                  className="mb-5 inline-flex size-14 items-center justify-center rounded-xl bg-gradient-to-br from-amber-100 to-orange-100 text-amber-600 transition-all duration-300 group-hover:from-amber-500 group-hover:to-orange-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-amber-500/30"
+                  className="mb-3 inline-flex size-10 items-center justify-center rounded-lg bg-gradient-to-br from-amber-100 to-orange-100 text-amber-600 transition-all duration-300 group-hover:from-amber-500 group-hover:to-orange-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-amber-500/30 sm:mb-5 sm:size-14 sm:rounded-xl"
                   transition={{ duration: 0.5 }}
                   whileHover={{ rotate: 360, scale: 1.1 }}
                 >
                   {product.icon}
                 </motion.div>
-                <h3 className="mb-3 text-lg font-bold text-gray-900">{product.title}</h3>
-                <p className="text-gray-600">{product.description}</p>
+                <h3 className="mb-2 text-base font-bold text-gray-900 sm:mb-3 sm:text-lg">{product.title}</h3>
+                <p className="text-sm text-gray-600">{product.description}</p>
               </div>
             </motion.div>
           ))}

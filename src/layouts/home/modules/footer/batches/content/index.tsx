@@ -14,15 +14,15 @@ export const Content: FC = (): ReactElement => {
   const isInView = useInView(ref, { margin: "-50px", once: true });
 
   return (
-    <footer className="bg-gray-900 pt-16 pb-8" ref={ref}>
+    <footer className="bg-gray-900 pt-10 pb-6 sm:pt-16 sm:pb-8" ref={ref}>
       <motion.div
         animate={isInView ? { opacity: 1, y: 0 } : {}}
-        className="container mx-auto px-6 lg:px-12"
+        className="container mx-auto px-4 sm:px-6 lg:px-12"
         initial={{ opacity: 0, y: 30 }}
         transition={{ duration: 0.6 }}
       >
         {/* Main Footer */}
-        <div className="grid gap-8 pb-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 pb-8 sm:gap-8 sm:pb-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <motion.div
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -31,14 +31,15 @@ export const Content: FC = (): ReactElement => {
             transition={{ delay: 0.1, duration: 0.6 }}
           >
             <a className="flex items-end gap-1" href="#home" onClick={(e) => scrollToSection(e, "home")}>
-              <Image alt="Logo" className="w-fit -translate-y-1.75 brightness-0 invert" height={25} src={logo} />
-              <span className="text-xl font-bold text-white">PT. Mulya Kencana Metalindo</span>
+              <Image alt="Logo" className="xs:-translate-y-1.75 w-fit brightness-0 invert" height={25} src={logo} />
+              <span className="xs:inline hidden text-lg font-bold text-white sm:text-xl">PT. Mulya Kencana Metalindo</span>
+              {/* <span className="xs:hidden text-base font-bold text-white">PT. MKM</span> */}
             </a>
-            <p className="mt-4 max-w-md text-gray-400">
+            <p className="mt-3 max-w-md text-sm text-gray-400 sm:mt-4 sm:text-base">
               Perusahaan distribusi bahan bangunan terpercaya sejak 1993. Menyediakan solusi konstruksi berkualitas untuk membangun Indonesia.
             </p>
             {/* Social Links */}
-            <div className="mt-6 flex gap-4">
+            <div className="mt-4 flex gap-3 sm:mt-6 sm:gap-4">
               {[
                 {
                   href: "https://instagram.com/mulyakencanametalindo",
@@ -50,7 +51,7 @@ export const Content: FC = (): ReactElement => {
                 },
               ].map((social, index) => (
                 <motion.a
-                  className="flex size-10 items-center justify-center rounded-full bg-gray-800 text-gray-400 transition-all hover:bg-amber-500 hover:text-white"
+                  className="flex size-9 items-center justify-center rounded-full bg-gray-800 text-gray-400 transition-all hover:bg-amber-500 hover:text-white sm:size-10"
                   href={social.href}
                   key={index}
                   rel="noopener noreferrer"
@@ -58,7 +59,7 @@ export const Content: FC = (): ReactElement => {
                   whileHover={{ rotate: 10, scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <svg className="size-5" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="size-4 sm:size-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d={social.icon} />
                   </svg>
                 </motion.a>
@@ -68,8 +69,8 @@ export const Content: FC = (): ReactElement => {
 
           {/* Quick Links */}
           <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ delay: 0.2, duration: 0.6 }}>
-            <h3 className="mb-4 font-semibold text-white">Quick Links</h3>
-            <ul className="space-y-3">
+            <h3 className="mb-3 text-sm font-semibold text-white sm:mb-4 sm:text-base">Quick Links</h3>
+            <ul className="space-y-2 sm:space-y-3">
               {["Home", "About Us", "Products", "Why Choose Us", "Careers", "Contact"].map((link, index) => {
                 const targetId = link.toLowerCase().replace(/\s+/g, "-");
                 return (
@@ -80,7 +81,7 @@ export const Content: FC = (): ReactElement => {
                     transition={{ delay: 0.3 + index * 0.05 }}
                   >
                     <motion.a
-                      className="text-gray-400 transition-colors hover:text-amber-500"
+                      className="text-sm text-gray-400 transition-colors hover:text-amber-500 sm:text-base"
                       href={`#${targetId}`}
                       onClick={(e) => scrollToSection(e, targetId)}
                       whileHover={{ x: 5 }}
@@ -95,10 +96,10 @@ export const Content: FC = (): ReactElement => {
 
           {/* Contact */}
           <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ delay: 0.3, duration: 0.6 }}>
-            <h3 className="mb-4 font-semibold text-white">Contact Info</h3>
-            <ul className="space-y-3 text-gray-400">
+            <h3 className="mb-3 text-sm font-semibold text-white sm:mb-4 sm:text-base">Contact Info</h3>
+            <ul className="space-y-2 text-sm text-gray-400 sm:space-y-3 sm:text-base">
               <li className="flex items-start gap-2">
-                <svg className="mt-0.5 size-5 shrink-0 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="mt-0.5 size-4 shrink-0 text-amber-500 sm:size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                     strokeLinecap="round"
@@ -106,10 +107,10 @@ export const Content: FC = (): ReactElement => {
                     strokeWidth={2}
                   />
                 </svg>
-                Jl. Terusan Pasir Koja No. 109B, Bandung
+                <span className="text-xs sm:text-sm">Jl. Terusan Pasir Koja No. 109B, Bandung</span>
               </li>
               <li className="flex items-center gap-2">
-                <svg className="size-5 shrink-0 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="size-4 shrink-0 text-amber-500 sm:size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     strokeLinecap="round"
@@ -117,7 +118,7 @@ export const Content: FC = (): ReactElement => {
                     strokeWidth={2}
                   />
                 </svg>
-                info@mulyakencanametalindo.com
+                <span className="text-xs break-all sm:text-sm">info@mulyakencanametalindo.com</span>
               </li>
             </ul>
           </motion.div>
@@ -126,13 +127,15 @@ export const Content: FC = (): ReactElement => {
         {/* Bottom Bar */}
         <motion.div
           animate={isInView ? { opacity: 1 } : {}}
-          className="border-t border-gray-800 pt-8"
+          className="border-t border-gray-800 pt-6 sm:pt-8"
           initial={{ opacity: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-sm text-gray-500">&copy; {new Date().getFullYear()} PT. Mulya Kencana Metalindo. All rights reserved.</p>
-            <p className="text-sm text-gray-500">Building Indonesia Since 1993</p>
+          <div className="flex flex-col items-center justify-between gap-2 sm:gap-4 md:flex-row">
+            <p className="text-center text-xs text-gray-500 sm:text-sm">
+              &copy; {new Date().getFullYear()} PT. Mulya Kencana Metalindo. All rights reserved.
+            </p>
+            <p className="text-xs text-gray-500 sm:text-sm">Building Indonesia Since 1993</p>
           </div>
         </motion.div>
       </motion.div>
