@@ -9,13 +9,13 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   authors: [{ name: "Gede Dewo Wahyu M.W", url: "https://github.com/gdwmw" }],
-  category: "Boilerplate",
-  creator: "Gede Dewo Wahyu M.W",
-  publisher: "Gede Dewo Wahyu M.W",
+  category: "Distributor Bahan Bangunan",
+  creator: "PT. Mulya Kencana Metalindo",
+  publisher: "PT. Mulya Kencana Metalindo",
   referrer: "strict-origin-when-cross-origin",
   title: {
-    default: "Next.js | Home",
-    template: "Next.js | %s",
+    default: "PT. Mulya Kencana Metalindo",
+    template: "PT. Mulya Kencana Metalindo | %s",
   },
 };
 

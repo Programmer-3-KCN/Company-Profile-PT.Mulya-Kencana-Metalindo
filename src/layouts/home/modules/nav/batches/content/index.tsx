@@ -51,7 +51,7 @@ export const Content: FC = (): ReactElement => {
         >
           <Image alt="Logo" className="h-10 w-auto md:h-12" height={50} src="/assets/images/logos/logo.png" width={50} />
           <span className={`text-lg font-bold transition-colors md:text-xl ${isScrolled ? "text-amber-700" : "text-amber-800"}`}>
-            PT Mulya Kencana Metalindo
+            PT. Mulya Kencana Metalindo
           </span>
         </motion.a>
         <div className="hidden gap-8 lg:flex">

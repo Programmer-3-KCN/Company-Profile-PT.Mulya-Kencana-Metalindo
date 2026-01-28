@@ -30,7 +30,7 @@ export const Content: FC = (): ReactElement => {
           >
             <a className="flex items-center gap-3" href="#home" onClick={(e) => scrollToSection(e, "home")}>
               <Image alt="Logo" className="h-12 w-auto brightness-0 invert" height={50} src="/assets/images/logos/logo.png" width={50} />
-              <span className="text-xl font-bold text-white">PT Mulya Kencana Metalindo</span>
+              <span className="text-xl font-bold text-white">PT. Mulya Kencana Metalindo</span>
             </a>
             <p className="mt-4 max-w-md text-gray-400">
               Perusahaan distribusi bahan bangunan terpercaya sejak 1993. Menyediakan solusi konstruksi berkualitas untuk membangun Indonesia.
@@ -129,7 +129,7 @@ export const Content: FC = (): ReactElement => {
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-sm text-gray-500">&copy; {new Date().getFullYear()} PT Mulya Kencana Metalindo. All rights reserved.</p>
+            <p className="text-sm text-gray-500">&copy; {new Date().getFullYear()} PT. Mulya Kencana Metalindo. All rights reserved.</p>
             <p className="text-sm text-gray-500">Building Indonesia Since 1993</p>
           </div>
         </motion.div>

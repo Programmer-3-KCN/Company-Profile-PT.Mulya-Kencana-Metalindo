@@ -59,7 +59,7 @@ export const Content: FC = (): ReactElement => {
       ),
       label: "LinkedIn",
       link: "https://linkedin.com/company/pt-mulya-kencana-metalindo",
-      value: "PT Mulya Kencana Metalindo",
+      value: "PT. Mulya Kencana Metalindo",
     },
   ];
 

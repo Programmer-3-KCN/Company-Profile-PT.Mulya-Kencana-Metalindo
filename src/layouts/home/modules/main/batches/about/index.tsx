@@ -23,11 +23,11 @@ export const Content: FC = (): ReactElement => {
               Tentang Kami
             </motion.span>
             <motion.h2 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl lg:text-5xl" variants={fadeInUp}>
-              PT Mulya Kencana
+              PT. Mulya Kencana
               <span className="block text-amber-600">Metalindo</span>
             </motion.h2>
             <motion.p className="mt-6 text-lg leading-relaxed text-gray-600" variants={fadeInUp}>
-              PT Mulya Kencana Metalindo adalah perusahaan swasta nasional yang berdedikasi dalam bidang manufaktur dan distribusi bahan bangunan.
+              PT. Mulya Kencana Metalindo adalah perusahaan swasta nasional yang berdedikasi dalam bidang manufaktur dan distribusi bahan bangunan.
               Berawal dari semangat untuk memberikan kontribusi nyata bagi industri konstruksi tanah air, kami telah tumbuh menjadi mitra strategis
               bagi berbagai proyek pembangunan mulai dari skala retail hingga infrastruktur.
             </motion.p>

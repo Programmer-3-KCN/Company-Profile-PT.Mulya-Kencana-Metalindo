@@ -9,23 +9,25 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  description: "Boilerplate by Gede Dewo Wahyu M.W",
-  keywords: ["Boilerplate"],
+  description:
+    "PT. Mulya Kencana Metalindo - Perusahaan distribusi bahan bangunan terpercaya sejak 1993. Menyediakan baja ringan, rangka atap, genteng metal, dan aksesoris konstruksi berkualitas SNI.",
+  keywords: ["PT. Mulya Kencana Metalindo", "Bandung", "Indonesia"],
   openGraph: {
-    description: "Boilerplate by Gede Dewo Wahyu M.W",
+    description:
+      "PT. Mulya Kencana Metalindo - Perusahaan distribusi bahan bangunan terpercaya sejak 1993. Menyediakan baja ringan, rangka atap, genteng metal, dan aksesoris konstruksi berkualitas SNI.",
     images: [
       {
-        alt: "Next.js",
+        alt: "PT. Mulya Kencana Metalindo",
         height: 800,
-        url: "https://boilerplate.zettara.com/assets/images/logos/Vercel.png", // Must be an absolute URL and PNG format
+        url: "https://example.com/assets/images/logos/logo.png", // Must be an absolute URL and PNG format
         width: 800,
       },
     ],
-    locale: "en_US",
-    siteName: "Next.js",
-    title: "Next.js | Home",
+    locale: "id_ID",
+    siteName: "PT. Mulya Kencana Metalindo",
+    title: "PT. Mulya Kencana Metalindo | Distributor Bahan Bangunan Terpercaya",
     type: "website",
-    url: "https://boilerplate.zettara.com/",
+    url: "https://example.com/",
   },
   robots: {
     follow: true,
@@ -42,10 +44,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    creator: "@gdwmw",
-    description: "Boilerplate by Gede Dewo Wahyu M.W",
-    images: ["https://boilerplate.zettara.com/assets/images/logos/Vercel.png"], // Must be an absolute URL and PNG format
-    title: "Next.js | Home",
+    creator: "@mulyakencanametalindo",
+    description:
+      "PT. Mulya Kencana Metalindo - Perusahaan distribusi bahan bangunan terpercaya sejak 1993. Menyediakan baja ringan, rangka atap, genteng metal, dan aksesoris konstruksi berkualitas SNI.",
+    images: ["https://example.com/assets/images/logos/logo.png"], // Must be an absolute URL and PNG format
+    title: "PT. Mulya Kencana Metalindo | Distributor Bahan Bangunan Terpercaya",
   },
 };
 
