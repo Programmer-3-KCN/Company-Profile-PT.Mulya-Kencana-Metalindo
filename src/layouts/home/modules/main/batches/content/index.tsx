@@ -4,6 +4,22 @@ import { AnimatePresence, motion, useInView, useScroll, useTransform, type Varia
 import Image from "next/image";
 import { FC, ReactElement, useEffect, useRef, useState } from "react";
 
+// Smooth Scroll Function
+const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+  e.preventDefault();
+  const element = document.getElementById(targetId);
+  if (element) {
+    const navHeight = 80; // Navigation height offset
+    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - navHeight;
+
+    window.scrollTo({
+      behavior: "smooth",
+      top: offsetPosition,
+    });
+  }
+};
+
 // Animation Variants
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -113,28 +129,38 @@ const Navigation: FC = (): ReactElement => {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="container mx-auto flex items-center justify-between px-6 py-4 lg:px-12">
-        <motion.a className="flex items-center gap-3" href="#home" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+        <motion.a
+          className="flex items-center gap-3"
+          href="#home"
+          onClick={(e) => scrollToSection(e, "home")}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+        >
           <Image alt="Logo" className="h-10 w-auto md:h-12" height={50} src="/assets/images/logos/logo.png" width={50} />
           <span className={`text-lg font-bold transition-colors md:text-xl ${isScrolled ? "text-amber-700" : "text-amber-800"}`}>
             PT Mulya Kencana Metalindo
           </span>
         </motion.a>
         <div className="hidden gap-8 lg:flex">
-          {navItems.map((item, index) => (
-            <motion.a
-              animate={{ opacity: 1, y: 0 }}
-              className={`relative font-medium transition-colors after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-amber-500 after:transition-all after:duration-300 hover:text-amber-600 hover:after:w-full ${
-                isScrolled ? "text-gray-700" : "text-gray-800"
-              }`}
-              href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-              initial={{ opacity: 0, y: -20 }}
-              key={item}
-              transition={{ delay: index * 0.1, duration: 0.4 }}
-              whileHover={{ y: -2 }}
-            >
-              {item}
-            </motion.a>
-          ))}
+          {navItems.map((item, index) => {
+            const targetId = item.toLowerCase().replace(/\s+/g, "-");
+            return (
+              <motion.a
+                animate={{ opacity: 1, y: 0 }}
+                className={`relative font-medium transition-colors after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-amber-500 after:transition-all after:duration-300 hover:text-amber-600 hover:after:w-full ${
+                  isScrolled ? "text-gray-700" : "text-gray-800"
+                }`}
+                href={`#${targetId}`}
+                initial={{ opacity: 0, y: -20 }}
+                key={item}
+                onClick={(e) => scrollToSection(e, targetId)}
+                transition={{ delay: index * 0.1, duration: 0.4 }}
+                whileHover={{ y: -2 }}
+              >
+                {item}
+              </motion.a>
+            );
+          })}
         </div>
         <motion.button
           className={`rounded-lg p-2 transition-colors lg:hidden ${isScrolled ? "text-gray-700 hover:bg-gray-100" : "text-gray-800 hover:bg-white/20"}`}
@@ -156,19 +182,25 @@ const Navigation: FC = (): ReactElement => {
             transition={{ duration: 0.3 }}
           >
             <div className="container mx-auto space-y-1 px-6 py-4">
-              {navItems.map((item, index) => (
-                <motion.a
-                  animate={{ opacity: 1, x: 0 }}
-                  className="block rounded-lg px-4 py-3 font-medium text-gray-700 transition-colors hover:bg-amber-50 hover:text-amber-600"
-                  href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-                  initial={{ opacity: 0, x: -20 }}
-                  key={item}
-                  onClick={() => setIsMenuOpen(false)}
-                  transition={{ delay: index * 0.05 }}
-                >
-                  {item}
-                </motion.a>
-              ))}
+              {navItems.map((item, index) => {
+                const targetId = item.toLowerCase().replace(/\s+/g, "-");
+                return (
+                  <motion.a
+                    animate={{ opacity: 1, x: 0 }}
+                    className="block rounded-lg px-4 py-3 font-medium text-gray-700 transition-colors hover:bg-amber-50 hover:text-amber-600"
+                    href={`#${targetId}`}
+                    initial={{ opacity: 0, x: -20 }}
+                    key={item}
+                    onClick={(e) => {
+                      scrollToSection(e, targetId);
+                      setIsMenuOpen(false);
+                    }}
+                    transition={{ delay: index * 0.05 }}
+                  >
+                    {item}
+                  </motion.a>
+                );
+              })}
             </div>
           </motion.div>
         )}
@@ -242,6 +274,7 @@ const HeroSection: FC = (): ReactElement => {
           <motion.a
             className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-8 py-4 font-semibold text-white shadow-lg shadow-amber-500/30"
             href="#products"
+            onClick={(e) => scrollToSection(e, "products")}
             whileHover={{ boxShadow: "0 20px 40px rgba(245, 158, 11, 0.4)", scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -253,6 +286,7 @@ const HeroSection: FC = (): ReactElement => {
           <motion.a
             className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-gray-300 bg-white/80 px-8 py-4 font-semibold text-gray-700 backdrop-blur-sm transition-all"
             href="#contact"
+            onClick={(e) => scrollToSection(e, "contact")}
             whileHover={{ borderColor: "#f59e0b", scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -300,6 +334,7 @@ const HeroSection: FC = (): ReactElement => {
           animate={{ y: [0, 10, 0] }}
           className="flex flex-col items-center gap-2 text-gray-400 transition-colors hover:text-amber-500"
           href="#about-us"
+          onClick={(e) => scrollToSection(e, "about-us")}
           transition={{ duration: 1.5, repeat: Infinity }}
         >
           <span className="text-xs font-medium tracking-wider uppercase">Scroll</span>
@@ -803,6 +838,7 @@ const CareersSection: FC = (): ReactElement => {
           <motion.a
             className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-amber-600 shadow-xl transition-all hover:shadow-2xl"
             href="#contact"
+            onClick={(e) => scrollToSection(e, "contact")}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -819,6 +855,7 @@ const CareersSection: FC = (): ReactElement => {
           <motion.a
             className="inline-flex items-center gap-2 rounded-full border-2 border-white/50 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/10"
             href="#contact"
+            onClick={(e) => scrollToSection(e, "contact")}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -989,7 +1026,7 @@ const FooterSection: FC = (): ReactElement => {
             initial={{ opacity: 0, x: -30 }}
             transition={{ delay: 0.1, duration: 0.6 }}
           >
-            <a className="flex items-center gap-3" href="#home">
+            <a className="flex items-center gap-3" href="#home" onClick={(e) => scrollToSection(e, "home")}>
               <Image alt="Logo" className="h-12 w-auto brightness-0 invert" height={50} src="/assets/images/logos/logo.png" width={50} />
               <span className="text-xl font-bold text-white">PT Mulya Kencana Metalindo</span>
             </a>
@@ -1029,22 +1066,26 @@ const FooterSection: FC = (): ReactElement => {
           <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ delay: 0.2, duration: 0.6 }}>
             <h3 className="mb-4 font-semibold text-white">Quick Links</h3>
             <ul className="space-y-3">
-              {["Home", "About Us", "Products", "Why Choose Us", "Careers", "Contact"].map((link, index) => (
-                <motion.li
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  initial={{ opacity: 0, x: -10 }}
-                  key={link}
-                  transition={{ delay: 0.3 + index * 0.05 }}
-                >
-                  <motion.a
-                    className="text-gray-400 transition-colors hover:text-amber-500"
-                    href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
-                    whileHover={{ x: 5 }}
+              {["Home", "About Us", "Products", "Why Choose Us", "Careers", "Contact"].map((link, index) => {
+                const targetId = link.toLowerCase().replace(/\s+/g, "-");
+                return (
+                  <motion.li
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                    initial={{ opacity: 0, x: -10 }}
+                    key={link}
+                    transition={{ delay: 0.3 + index * 0.05 }}
                   >
-                    {link}
-                  </motion.a>
-                </motion.li>
-              ))}
+                    <motion.a
+                      className="text-gray-400 transition-colors hover:text-amber-500"
+                      href={`#${targetId}`}
+                      onClick={(e) => scrollToSection(e, targetId)}
+                      whileHover={{ x: 5 }}
+                    >
+                      {link}
+                    </motion.a>
+                  </motion.li>
+                );
+              })}
             </ul>
           </motion.div>
 
