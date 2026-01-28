@@ -4,6 +4,8 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { FC, ReactElement, useRef } from "react";
 
+import logo from "@/public/assets/images/logos/PTMKM.png";
+
 import { scrollToSection } from "../../../nav/batches/content";
 
 // Footer Section
@@ -28,8 +30,8 @@ export const Content: FC = (): ReactElement => {
             initial={{ opacity: 0, x: -30 }}
             transition={{ delay: 0.1, duration: 0.6 }}
           >
-            <a className="flex items-center gap-3" href="#home" onClick={(e) => scrollToSection(e, "home")}>
-              <Image alt="Logo" className="h-12 w-auto brightness-0 invert" height={50} src="/assets/images/logos/logo.png" width={50} />
+            <a className="flex items-end gap-1" href="#home" onClick={(e) => scrollToSection(e, "home")}>
+              <Image alt="Logo" className="w-fit -translate-y-1.75 brightness-0 invert" height={25} src={logo} />
               <span className="text-xl font-bold text-white">PT. Mulya Kencana Metalindo</span>
             </a>
             <p className="mt-4 max-w-md text-gray-400">

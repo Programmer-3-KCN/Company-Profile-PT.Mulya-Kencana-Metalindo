@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       {
         alt: "PT. Mulya Kencana Metalindo",
         height: 800,
-        url: "https://example.com/assets/images/logos/logo.png", // Must be an absolute URL and PNG format
+        url: "https://pt-mulya-kencana-metalindo.vercel.app/assets/images/logos/PTMKM.png", // Must be an absolute URL and PNG format
         width: 800,
       },
     ],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "PT. Mulya Kencana Metalindo",
     title: "PT. Mulya Kencana Metalindo | Distributor Bahan Bangunan Terpercaya",
     type: "website",
-    url: "https://example.com/",
+    url: "https://pt-mulya-kencana-metalindo.vercel.app/",
   },
   robots: {
     follow: true,
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     creator: "@mulyakencanametalindo",
     description:
       "PT. Mulya Kencana Metalindo - Perusahaan distribusi bahan bangunan terpercaya sejak 1993. Menyediakan baja ringan, rangka atap, genteng metal, dan aksesoris konstruksi berkualitas SNI.",
-    images: ["https://example.com/assets/images/logos/logo.png"], // Must be an absolute URL and PNG format
+    images: ["https://pt-mulya-kencana-metalindo.vercel.app/assets/images/logos/PTMKM.png"], // Must be an absolute URL and PNG format
     title: "PT. Mulya Kencana Metalindo | Distributor Bahan Bangunan Terpercaya",
   },
 };

@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { FC, ReactElement, useEffect, useState } from "react";
 
+import logo from "@/public/assets/images/logos/PTMKM.png";
+
 // Smooth Scroll Function
 export const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
   e.preventDefault();
@@ -43,16 +45,14 @@ export const Content: FC = (): ReactElement => {
     >
       <div className="container mx-auto flex items-center justify-between px-6 py-4 lg:px-12">
         <motion.a
-          className="flex items-center gap-3"
+          className="flex items-end gap-1"
           href="#home"
           onClick={(e) => scrollToSection(e, "home")}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          <Image alt="Logo" className="h-10 w-auto md:h-12" height={50} src="/assets/images/logos/logo.png" width={50} />
-          <span className={`text-lg font-bold transition-colors md:text-xl ${isScrolled ? "text-amber-700" : "text-amber-800"}`}>
-            PT. Mulya Kencana Metalindo
-          </span>
+          <Image alt="Logo" className="w-fit -translate-y-1.75" height={25} src={logo} />
+          <span className="text-lg font-bold text-amber-700 transition-colors md:text-xl">PT. Mulya Kencana Metalindo</span>
         </motion.a>
         <div className="hidden gap-8 lg:flex">
           {navItems.map((item, index) => {

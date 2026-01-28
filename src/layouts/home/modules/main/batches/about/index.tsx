@@ -4,6 +4,8 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { FC, ReactElement, useRef } from "react";
 
+import logo from "@/public/assets/images/logos/PTMKM.png";
+
 import { fadeInLeft, fadeInRight, fadeInUp } from "../shared";
 
 // About Section
@@ -73,7 +75,7 @@ export const Content: FC = (): ReactElement => {
             >
               <div className="flex aspect-square items-center justify-center rounded-[22px] bg-gradient-to-br from-amber-50 to-white p-8">
                 <motion.div animate={{ rotate: [0, 5, -5, 0] }} transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}>
-                  <Image alt="Company Logo" className="w-3/4 drop-shadow-lg" height={300} src="/assets/images/logos/logo.png" width={300} />
+                  <Image alt="Company Logo" className="w-fit drop-shadow-lg" height={250} src={logo} />
                 </motion.div>
               </div>
             </motion.div>
