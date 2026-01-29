@@ -11,7 +11,7 @@ export const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, targetId
   e.preventDefault();
   const element = document.getElementById(targetId);
   if (element) {
-    const navHeight = 80; // Navigation height offset
+    const navHeight = 56.5; // Navigation height offset
     const elementPosition = element.getBoundingClientRect().top + window.scrollY;
     const offsetPosition = elementPosition - navHeight;
 
@@ -47,7 +47,10 @@ export const Content: FC = (): ReactElement => {
         <motion.a
           className="flex items-end gap-1"
           href="#home"
-          onClick={(e) => scrollToSection(e, "home")}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection(e, "home");
+          }}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
@@ -106,8 +109,11 @@ export const Content: FC = (): ReactElement => {
                     initial={{ opacity: 0, x: -20 }}
                     key={item}
                     onClick={(e) => {
-                      scrollToSection(e, targetId);
+                      e.preventDefault();
                       setIsMenuOpen(false);
+                      setTimeout(() => {
+                        scrollToSection(e, targetId);
+                      }, 100);
                     }}
                     transition={{ delay: index * 0.05 }}
                   >
