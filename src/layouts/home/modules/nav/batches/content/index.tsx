@@ -26,7 +26,7 @@ export const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, targetId
 export const Content: FC = (): ReactElement => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const navItems = ["Home", "About Us", "Products", "Why Choose Us", "Careers", "Contact"];
+  const navItems = ["Home", "About Us", "Products", "Why Choose Us"];
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);

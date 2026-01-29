@@ -128,7 +128,7 @@ export const Content: FC = (): ReactElement => {
               <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
             </motion.svg>
           </motion.a>
-          <motion.a
+          {/* <motion.a
             className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-gray-300 bg-white/80 px-5 py-3 text-sm font-semibold text-gray-700 backdrop-blur-sm transition-all sm:px-8 sm:py-4 sm:text-base"
             href="#contact"
             onClick={(e) => scrollToSection(e, "contact")}
@@ -144,7 +144,7 @@ export const Content: FC = (): ReactElement => {
               />
             </svg>
             Hubungi Kami
-          </motion.a>
+          </motion.a> */}
         </motion.div>
 
         {/* Stats */}

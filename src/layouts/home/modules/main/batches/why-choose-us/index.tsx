@@ -21,21 +21,21 @@ export const Content: FC = (): ReactElement => {
       title: "Pengalaman 30+ Tahun",
       value: "30+",
     },
-    {
-      description: "Hanya mendistribusikan produk yang telah teruji kualitas dan keamanannya.",
-      icon: (
-        <svg className="size-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-          />
-        </svg>
-      ),
-      title: "Produk Tersertifikasi SNI",
-      value: "100%",
-    },
+    // {
+    //   description: "Hanya mendistribusikan produk yang telah teruji kualitas dan keamanannya.",
+    //   icon: (
+    //     <svg className="size-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    //       <path
+    //         d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+    //         strokeLinecap="round"
+    //         strokeLinejoin="round"
+    //         strokeWidth={2}
+    //       />
+    //     </svg>
+    //   ),
+    //   title: "Produk Tersertifikasi SNI",
+    //   value: "100%",
+    // },
     {
       description: "Jangkauan pengiriman luas didukung manajemen rantai pasok profesional.",
       icon: (
@@ -86,7 +86,7 @@ export const Content: FC = (): ReactElement => {
 
         <motion.div
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-2 gap-4 sm:gap-8 lg:grid-cols-4"
+          className="grid grid-cols-1 gap-4 sm:gap-8 lg:grid-cols-3"
           initial="hidden"
           variants={staggerContainer}
         >

@@ -22,7 +22,7 @@ export const Content: FC = (): ReactElement => {
         transition={{ duration: 0.6 }}
       >
         {/* Main Footer */}
-        <div className="grid gap-6 pb-8 sm:gap-8 sm:pb-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 pb-8 sm:gap-8 sm:pb-12 md:grid-cols-2 lg:grid-cols-3">
           {/* Brand */}
           <motion.div
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -39,7 +39,7 @@ export const Content: FC = (): ReactElement => {
               Perusahaan distribusi bahan bangunan terpercaya sejak 1993. Menyediakan solusi konstruksi berkualitas untuk membangun Indonesia.
             </p>
             {/* Social Links */}
-            <div className="mt-4 flex gap-3 sm:mt-6 sm:gap-4">
+            {/* <div className="mt-4 flex gap-3 sm:mt-6 sm:gap-4">
               {[
                 {
                   href: "https://instagram.com/mulyakencanametalindo",
@@ -64,14 +64,14 @@ export const Content: FC = (): ReactElement => {
                   </svg>
                 </motion.a>
               ))}
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Quick Links */}
           <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ delay: 0.2, duration: 0.6 }}>
             <h3 className="mb-3 text-sm font-semibold text-white sm:mb-4 sm:text-base">Quick Links</h3>
             <ul className="space-y-2 sm:space-y-3">
-              {["Home", "About Us", "Products", "Why Choose Us", "Careers", "Contact"].map((link, index) => {
+              {["Home", "About Us", "Products", "Why Choose Us"].map((link, index) => {
                 const targetId = link.toLowerCase().replace(/\s+/g, "-");
                 return (
                   <motion.li
@@ -95,7 +95,7 @@ export const Content: FC = (): ReactElement => {
           </motion.div>
 
           {/* Contact */}
-          <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ delay: 0.3, duration: 0.6 }}>
+          {/* <motion.div animate={isInView ? { opacity: 1, y: 0 } : {}} initial={{ opacity: 0, y: 20 }} transition={{ delay: 0.3, duration: 0.6 }}>
             <h3 className="mb-3 text-sm font-semibold text-white sm:mb-4 sm:text-base">Contact Info</h3>
             <ul className="space-y-2 text-sm text-gray-400 sm:space-y-3 sm:text-base">
               <li className="flex items-start gap-2">
@@ -121,7 +121,7 @@ export const Content: FC = (): ReactElement => {
                 <span className="text-xs break-all sm:text-sm">info@mulyakencanametalindo.com</span>
               </li>
             </ul>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Bottom Bar */}
