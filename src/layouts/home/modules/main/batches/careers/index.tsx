@@ -49,7 +49,7 @@ export const Content: FC = (): ReactElement => {
         >
           <motion.a
             className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-amber-600 shadow-xl transition-all hover:shadow-2xl sm:w-auto sm:px-8 sm:py-4 sm:text-base"
-            href="#contact"
+            href="https://linkedin.com/company/pt-mulya-kencana-metalindo"
             onClick={(e) => scrollToSection(e, "contact")}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -66,7 +66,7 @@ export const Content: FC = (): ReactElement => {
           </motion.a>
           <motion.a
             className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-white/50 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:border-white hover:bg-white/10 sm:w-auto sm:px-8 sm:py-4 sm:text-base"
-            href="#contact"
+            href="https://link.kencana.co.id/recruitment"
             onClick={(e) => scrollToSection(e, "contact")}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
