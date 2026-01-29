@@ -10,11 +10,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   description:
-    "PT. Mulya Kencana Metalindo - Perusahaan distribusi bahan bangunan terpercaya sejak 1993. Menyediakan baja ringan, rangka atap, genteng metal, dan aksesoris konstruksi berkualitas SNI.",
+    "PT. Mulya Kencana Metalindo - Perusahaan distribusi bahan bangunan. Menyediakan baja ringan, rangka atap, genteng metal, dan aksesoris konstruksi berkualitas SNI.",
   keywords: ["PT. Mulya Kencana Metalindo", "Bandung", "Indonesia"],
   openGraph: {
     description:
-      "PT. Mulya Kencana Metalindo - Perusahaan distribusi bahan bangunan terpercaya sejak 1993. Menyediakan baja ringan, rangka atap, genteng metal, dan aksesoris konstruksi berkualitas SNI.",
+      "PT. Mulya Kencana Metalindo - Perusahaan distribusi bahan bangunan. Menyediakan baja ringan, rangka atap, genteng metal, dan aksesoris konstruksi berkualitas SNI.",
     images: [
       {
         alt: "PT. Mulya Kencana Metalindo",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     creator: "@mulyakencanametalindo",
     description:
-      "PT. Mulya Kencana Metalindo - Perusahaan distribusi bahan bangunan terpercaya sejak 1993. Menyediakan baja ringan, rangka atap, genteng metal, dan aksesoris konstruksi berkualitas SNI.",
+      "PT. Mulya Kencana Metalindo - Perusahaan distribusi bahan bangunan. Menyediakan baja ringan, rangka atap, genteng metal, dan aksesoris konstruksi berkualitas SNI.",
     images: ["https://pt-mulya-kencana-metalindo.vercel.app/assets/images/logos/PTMKM.png"], // Must be an absolute URL and PNG format
     title: "PT. Mulya Kencana Metalindo | Distributor Bahan Bangunan Terpercaya",
   },

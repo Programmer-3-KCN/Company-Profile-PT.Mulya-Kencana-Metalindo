@@ -36,7 +36,7 @@ export const Content: FC = (): ReactElement => {
               {/* <span className="xs:hidden text-base font-bold text-white">PT. MKM</span> */}
             </a>
             <p className="mt-3 max-w-md text-sm text-gray-400 sm:mt-4 sm:text-base">
-              Perusahaan distribusi bahan bangunan terpercaya sejak 1993. Menyediakan solusi konstruksi berkualitas untuk membangun Indonesia.
+              Perusahaan distribusi bahan bangunan terpercaya. Menyediakan solusi konstruksi berkualitas untuk membangun Indonesia.
             </p>
             {/* Social Links */}
             {/* <div className="mt-4 flex gap-3 sm:mt-6 sm:gap-4">
@@ -135,7 +135,7 @@ export const Content: FC = (): ReactElement => {
             <p className="text-center text-xs text-gray-500 sm:text-sm">
               &copy; {new Date().getFullYear()} PT. Mulya Kencana Metalindo. All rights reserved.
             </p>
-            <p className="text-xs text-gray-500 sm:text-sm">Building Indonesia Since 1993</p>
+            {/* <p className="text-xs text-gray-500 sm:text-sm">Building Indonesia Since 1993</p> */}
           </div>
         </motion.div>
       </motion.div>

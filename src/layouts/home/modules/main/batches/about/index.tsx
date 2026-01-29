@@ -62,8 +62,8 @@ export const Content: FC = (): ReactElement => {
                 <div>
                   <h3 className="text-base font-bold text-gray-900 sm:text-lg">Sejarah & Filosofi</h3>
                   <p className="mt-1 text-sm text-gray-600 sm:mt-2 sm:text-base">
-                    Didirikan pada tahun 1993 di Bandung, nama &quot;Kencana&quot; diambil dari simbol kereta kencana yang melambangkan kendaraan
-                    terhormat. Filosofi ini mencerminkan komitmen kami untuk senantiasa bergerak maju dengan cara yang terhormat.
+                    Didirikan di Bandung, nama &quot;Kencana&quot; diambil dari simbol kereta kencana yang melambangkan kendaraan terhormat. Filosofi
+                    ini mencerminkan komitmen kami untuk senantiasa bergerak maju dengan cara yang terhormat.
                   </p>
                 </div>
               </div>
