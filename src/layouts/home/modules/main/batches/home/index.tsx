@@ -63,7 +63,7 @@ export const Content: FC = (): ReactElement => {
 
   return (
     <section
-      className="relative flex min-h-dvh items-center justify-center overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100"
+      className="relative flex min-h-svh items-center justify-center overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100"
       id="home"
       ref={ref}
     >
