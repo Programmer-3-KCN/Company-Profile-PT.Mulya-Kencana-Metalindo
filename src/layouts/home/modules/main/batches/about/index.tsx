@@ -89,7 +89,7 @@ export const Content: FC = (): ReactElement => {
               </div>
             </motion.div>
             {/* Floating Card */}
-            <motion.div
+            {/* <motion.div
               animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
               className="absolute -bottom-4 left-0 rounded-xl border border-gray-100 bg-white p-3 shadow-xl sm:-bottom-6 sm:-left-6 sm:rounded-2xl sm:p-4"
               initial={{ opacity: 0, x: -50, y: 50 }}
@@ -111,7 +111,7 @@ export const Content: FC = (): ReactElement => {
                   <div className="text-xs text-gray-500 sm:text-sm">Tahun Berpengalaman</div>
                 </div>
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>
