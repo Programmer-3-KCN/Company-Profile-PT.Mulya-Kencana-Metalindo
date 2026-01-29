@@ -1,6 +1,6 @@
 import { FC, ReactElement } from "react";
 
-import { About, Careers, Contact, FloatingWhatsApp, Home, Products, VisionMission, WhyChooseUs } from "./batches";
+import { About, Careers, Contact, Home, Products, VisionMission, WhyChooseUs } from "./batches";
 
 export const Main: FC = (): ReactElement => (
   <main>
@@ -11,6 +11,6 @@ export const Main: FC = (): ReactElement => (
     <WhyChooseUs />
     <Careers />
     <Contact />
-    <FloatingWhatsApp />
+    {/* <FloatingWhatsApp /> */}
   </main>
 );
