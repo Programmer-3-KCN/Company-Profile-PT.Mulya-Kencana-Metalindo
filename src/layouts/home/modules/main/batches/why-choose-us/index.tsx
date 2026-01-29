@@ -12,6 +12,21 @@ export const Content: FC = (): ReactElement => {
 
   const advantages = [
     {
+      description: "Tingkat kepuasan tinggi membuat klien memilih kami dibanding kompetitor lain.",
+      icon: (
+        <svg className="size-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+          />
+        </svg>
+      ),
+      title: "Klien Loyal Kembali",
+      value: "95%",
+    },
+    {
       description: "Komitmen pengiriman sesuai jadwal untuk mendukung kelancaran proyek Anda.",
       icon: (
         <svg className="size-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -20,16 +35,6 @@ export const Content: FC = (): ReactElement => {
       ),
       title: "Pengiriman Tepat Waktu",
       value: "99%",
-    },
-    {
-      description: "Ragam produk lengkap untuk memenuhi berbagai kebutuhan industri Anda.",
-      icon: (
-        <svg className="size-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} />
-        </svg>
-      ),
-      title: "Produk Tersedia",
-      value: "100+",
     },
     {
       description: "Jangkauan pengiriman luas didukung manajemen rantai pasok profesional.",
