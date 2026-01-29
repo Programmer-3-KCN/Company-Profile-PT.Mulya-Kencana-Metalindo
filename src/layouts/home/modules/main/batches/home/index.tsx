@@ -1,58 +1,57 @@
 "use client";
 
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import { FC, ReactElement, useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { FC, ReactElement, useRef } from "react";
 
 import { scrollToSection } from "../../../nav/batches/content";
-import { staggerContainer, staggerItem } from "../shared";
 
 // CountUp Component
-interface CountUpProps {
-  duration?: number;
-  end: number;
-  suffix?: string;
-}
+// interface CountUpProps {
+//   duration?: number;
+//   end: number;
+//   suffix?: string;
+// }
 
-const CountUp: FC<CountUpProps> = ({ duration = 2, end, suffix = "" }): ReactElement => {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "-50px", once: true });
-  const hasAnimated = useRef(false);
+// const CountUp: FC<CountUpProps> = ({ duration = 2, end, suffix = "" }): ReactElement => {
+//   const [count, setCount] = useState(0);
+//   const ref = useRef(null);
+//   const isInView = useInView(ref, { margin: "-50px", once: true });
+//   const hasAnimated = useRef(false);
 
-  useEffect(() => {
-    if (isInView && !hasAnimated.current) {
-      hasAnimated.current = true;
-      const startTime = Date.now();
-      const endTime = startTime + duration * 1000;
+//   useEffect(() => {
+//     if (isInView && !hasAnimated.current) {
+//       hasAnimated.current = true;
+//       const startTime = Date.now();
+//       const endTime = startTime + duration * 1000;
 
-      const animate = () => {
-        const now = Date.now();
-        const progress = Math.min((now - startTime) / (duration * 1000), 1);
+//       const animate = () => {
+//         const now = Date.now();
+//         const progress = Math.min((now - startTime) / (duration * 1000), 1);
 
-        // Easing function (easeOutExpo)
-        const easeOutExpo = 1 - Math.pow(2, -10 * progress);
-        const currentCount = Math.floor(easeOutExpo * end);
+//         // Easing function (easeOutExpo)
+//         const easeOutExpo = 1 - Math.pow(2, -10 * progress);
+//         const currentCount = Math.floor(easeOutExpo * end);
 
-        setCount(currentCount);
+//         setCount(currentCount);
 
-        if (now < endTime) {
-          requestAnimationFrame(animate);
-        } else {
-          setCount(end);
-        }
-      };
+//         if (now < endTime) {
+//           requestAnimationFrame(animate);
+//         } else {
+//           setCount(end);
+//         }
+//       };
 
-      requestAnimationFrame(animate);
-    }
-  }, [isInView, end, duration]);
+//       requestAnimationFrame(animate);
+//     }
+//   }, [isInView, end, duration]);
 
-  return (
-    <span ref={ref}>
-      {count}
-      {suffix}
-    </span>
-  );
-};
+//   return (
+//     <span ref={ref}>
+//       {count}
+//       {suffix}
+//     </span>
+//   );
+// };
 
 // Hero Section
 export const Content: FC = (): ReactElement => {
@@ -73,7 +72,7 @@ export const Content: FC = (): ReactElement => {
       <div className="absolute inset-0 bg-[url('/assets/images/project/hero-pattern.png')] opacity-5" />
 
       <motion.div className="relative z-10 container mx-auto px-6 pt-20 text-center lg:px-12" style={{ opacity }}>
-        <motion.div
+        {/* <motion.div
           animate={{ opacity: 1, y: 0 }}
           className="mb-4 inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-100/80 px-3 py-1.5 text-xs font-medium text-amber-700 backdrop-blur-sm sm:mb-6 sm:px-4 sm:py-2 sm:text-sm"
           initial={{ opacity: 0, y: 20 }}
@@ -84,7 +83,7 @@ export const Content: FC = (): ReactElement => {
             <span className="relative inline-flex size-2 rounded-full bg-amber-500" />
           </span>
           Sejak 1993 Melayani Indonesia
-        </motion.div>
+        </motion.div> */}
         <motion.h1
           animate={{ opacity: 1, y: 0 }}
           className="mb-4 text-2xl leading-tight font-bold tracking-tight text-gray-900 sm:mb-6 sm:text-4xl md:text-5xl lg:text-6xl"
@@ -148,7 +147,7 @@ export const Content: FC = (): ReactElement => {
         </motion.div>
 
         {/* Stats */}
-        <motion.div
+        {/* <motion.div
           animate="visible"
           className="mx-auto mt-10 grid max-w-3xl grid-cols-3 gap-3 px-2 sm:mt-16 sm:gap-8 sm:px-0"
           initial="hidden"
@@ -171,7 +170,7 @@ export const Content: FC = (): ReactElement => {
               <div className="mt-1 text-xs text-gray-500 sm:text-sm">{stat.label}</div>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </motion.div>
 
       <motion.div
